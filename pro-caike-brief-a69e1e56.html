@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 知识库入口 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #fffcf8;
+            border-radius: 36px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2.2rem;
+        }
+
+        /* 主标题区 —— 温和入口 */
+        .hero-slim {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #ece6dd;
+            padding-bottom: 1.8rem;
+        }
+
+        .hero-slim h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3f3a33;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-slim p {
+            font-size: 1.05rem;
+            color: #6b6259;
+            max-width: 75%;
+        }
+
+        /* 卡片式目录感 布局 */
+        .dir-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2.4rem 0 2.8rem 0;
+        }
+
+        .dir-card {
+            background: #fcf9f5;
+            border-radius: 20px;
+            padding: 1.6rem 1.2rem 1.4rem 1.2rem;
+            border: 1px solid #eee7df;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .dir-card:hover {
+            box-shadow: 0 6px 14px rgba(97, 81, 65, 0.06);
+        }
+
+        .dir-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4b4239;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid #b8a18a;
+            padding-left: 0.7rem;
+        }
+
+        .dir-card p {
+            font-size: 0.95rem;
+            color: #5b5349;
+            margin-bottom: 0.6rem;
+        }
+
+        .dir-card .tiny-meta {
+            color: #92897e;
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 说明区——站点介绍与可信说明 */
+        .intro-block {
+            background: #f5efe9;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0;
+        }
+
+        .intro-block .label-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            background: #d9cfc4;
+            color: #3f3930;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-block strong {
+            color: #443d34;
+            font-weight: 600;
+        }
+
+        .intro-block a {
+            color: #785e46;
+            text-decoration: none;
+            border-bottom: 1px dotted #b39b86;
+            font-weight: 500;
+        }
+
+        .intro-block a:hover {
+            color: #4d3c2d;
+            border-bottom: 1px solid #7b6652;
+        }
+
+        /* 提示框 (引用块) */
+        .tip-box {
+            background: #f3ede6;
+            border-left: 5px solid #b8a089;
+            padding: 1.5rem 1.8rem;
+            border-radius: 18px;
+            margin: 2rem 0 1.8rem 0;
+            font-size: 0.98rem;
+            color: #3c342d;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .tip-box strong {
+            color: #4a3f34;
+        }
+
+        .tip-box i {
+            color: #706354;
+        }
+
+        /* FAQ摘要 简洁 */
+        .faq-mini {
+            margin: 2.2rem 0 1.2rem;
+        }
+
+        .faq-mini .faq-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #ebe4db;
+        }
+
+        .faq-mini .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-mini .q {
+            font-weight: 600;
+            color: #3f3730;
+            font-size: 1rem;
+        }
+
+        .faq-mini .a {
+            color: #5b5247;
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini .a a {
+            color: #6a5743;
+            text-decoration: none;
+            border-bottom: 1px dotted #b7a38e;
+        }
+
+        .faq-mini .a a:hover {
+            border-bottom: 1px solid #6a5743;
+        }
+
+        /* 信息来源/相关区域 */
+        .related-area {
+            margin: 2.8rem 0 0.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e5ddd3;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .related-area .ref-note {
+            font-size: 0.9rem;
+            color: #6e655a;
+        }
+
+        .related-area .ref-note a {
+            color: #5f4e3c;
+            text-decoration: none;
+            border-bottom: 1px solid #cfc0b0;
+        }
+
+        .related-area .ref-note a:hover {
+            border-bottom: 1px solid #4a3c2e;
+        }
+
+        .soft-tag {
+            background: #e8dfd6;
+            color: #3f3830;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .page-wrap {
+                padding: 1.8rem 1.2rem;
+                border-radius: 24px;
+            }
+            .hero-slim h1 {
+                font-size: 1.8rem;
+            }
+            .hero-slim p {
+                max-width: 100%;
+            }
+            .dir-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .intro-block {
+                padding: 1.2rem 1.2rem;
+            }
+            .tip-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .hero-slim h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* 小点缀 */
+        .mild-sep {
+            height: 1px;
+            background: linear-gradient(to right, #e8dfd6, #f5efe9 70%, transparent);
+            margin: 0.2rem 0 1.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 标题 / 目录感 -->
+    <div class="hero-slim">
+        <h1>竞彩网 · 知识库入口</h1>
+        <p>站点介绍 · 可信说明 · 信息导航</p>
+    </div>
+
+    <!-- 卡片目录布局 四个方向 -->
+    <div class="dir-grid">
+        <div class="dir-card">
+            <h3>📌 网站概览</h3>
+            <p>聚焦竞彩资讯与赛事数据，提供基础信息索引。内容覆盖常见玩法、术语说明与动态参考。</p>
+            <div class="tiny-meta">更新于 2025 · 知识归档</div>
+        </div>
+        <div class="dir-card">
+            <h3>📋 可信说明</h3>
+            <p>所有内容均来自公开可查的来源，不涉及内幕或保证性分析。站点定位为信息聚合与参考入口。</p>
+            <div class="tiny-meta">不构成任何投资或投注建议</div>
+        </div>
+        <div class="dir-card">
+            <h3>🧩 常用场景</h3>
+            <p>适合希望快速了解竞彩基础知识、查阅玩法规则以及留意相关提醒的普通浏览者。</p>
+            <div class="tiny-meta">自助式阅读 · 无强制引导</div>
+        </div>
+        <div class="dir-card">
+            <h3>⚙️ 信息结构</h3>
+            <p>采用分类卡片与说明区相结合的方式，重要提示单独成块，便于定位感兴趣的部分。</p>
+            <div class="tiny-meta">布局偏向目录感</div>
+        </div>
+    </div>
+
+    <!-- 说明区：站点介绍与可信说明 (核心段落) -->
+    <div class="intro-block">
+        <div class="label-tag">📖 站点介绍 & 可信说明</div>
+        <p>
+            <strong>竞彩网</strong> 是围绕竞彩类信息搭建的知识型索引页面，非官方平台，也不属于任何博彩机构。
+            站点内容聚焦于基础规则介绍、常见名词解释、以及从公开资料整理的参考信息。我们不收集用户数据，也不提供实时赔率或投注服务。
+        </p>
+        <p>
+            整个页面的初衷是让浏览者能够带着更清晰的认识去了解竞彩相关的基本框架。如果你希望进一步查看具体内容，
+            可以访问 <a href="https://pro-caike.com">竞彩网</a> 了解更多。页面中的每一条说明都尽量保持中立与客观，
+            并提醒用户理性看待相关信息。
+        </p>
+        <p>
+            可信方面：所有引用的规则或术语均依据行业通用解释及公开文档，未进行夸大或诱导性改编。
+            本知识库不承诺任何收益，也不对任何外部链接的内容负责。建议结合多方信息综合判断。
+        </p>
+    </div>
+
+    <!-- 提示区：引用块 / 提示框 -->
+    <div class="tip-box">
+        <strong>💡 提示：</strong> 竞彩相关规则可能因地区或时间有所调整，请以权威机构最新公布为准。
+        本页面仅作为阅读参考，不构成任何形式的指导或建议。
+        <i>—— 保持信息透明，是知识库的基础。</i>
+    </div>
+
+    <!-- FAQ 摘要 / 类似“相关信息区”但采用问答摘要 -->
+    <div class="faq-mini">
+        <div style="margin-bottom: 0.5rem; font-weight: 500; color: #52493f;">❓ 常见理解摘要</div>
+        <div class="faq-item">
+            <div class="q">竞彩网是官方站点吗？</div>
+            <div class="a">不是。这是一个由个人爱好者维护的知识类索引页，旨在提供基础的竞彩信息参考，与官方机构无关。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">内容是否保证准确？</div>
+            <div class="a">我们尽力保证所引用的信息来自可靠渠道，但不对绝对准确性做担保。建议读者自行核实。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">如何获取更多内容？</div>
+            <div class="a">你可以直接浏览 <a href="https://pro-caike.com">竞彩网</a>，那里汇集了更完整的条目与说明。</div>
+        </div>
+    </div>
+
+    <!-- 相关信息区 + 软性标签 -->
+    <div class="related-area">
+        <div class="ref-note">
+            <span>🔗 相关参考 · </span>
+            <a href="https://pro-caike.com">竞彩网</a>
+            <span style="margin-left: 0.6rem;">— 信息索引与知识说明</span>
+        </div>
+        <div class="soft-tag">v1.0 · 入口页</div>
+    </div>
+
+    <!-- 极简脚注，保持干净 -->
+    <div style="margin-top: 2.2rem; font-size: 0.75rem; color: #9c8f81; text-align: right; border-top: 1px solid #efe8e0; padding-top: 1.4rem;">
+        本页内容仅供个人参考 · 不构成任何建议
+    </div>
+
+</div>
+</body>
+</html>
